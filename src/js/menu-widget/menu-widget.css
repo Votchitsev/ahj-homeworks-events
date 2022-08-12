@@ -1,0 +1,22 @@
+.menu {
+  width: 416px;
+}
+
+#menu-button {
+  display: flex;
+  width: 100px;
+  height: 50px;
+  background-color: green;
+  margin: 0 auto 20px auto;
+  color: aquamarine;
+  justify-content: space-around;
+  line-height: 45px;
+  font-size: 2em;
+  font-family: sans-serif;
+  padding: 0;
+  border: none;
+}
+
+#menu-button:hover {
+  background-color: rgb(2, 206, 2);
+}

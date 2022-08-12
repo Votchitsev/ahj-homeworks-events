@@ -22,7 +22,7 @@ export default class Field {
       index = this.getRandomCell(index);
       const cell = this.container.childNodes[index];
       cell.classList.add('active');
-    }, 1500);
+    }, 1000);
   }
 
   getRandomCell(index) {
