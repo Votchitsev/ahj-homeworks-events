@@ -1,0 +1,46 @@
+.field-container {
+  display: flex;
+  flex-wrap: wrap;
+  cursor: url('../../png/hammer.png'), auto;
+}
+
+.cell {
+  background-color: aquamarine;
+  width: 100px;
+  height: 100px;
+  margin: 2px;
+}
+
+.active {
+  background-image: url('../../png/goblin.png');
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: calc(50vh - 250px);
+  width: 416px;
+}
+
+.gameOverScreen {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.4;
+  color: white; 
+  font-size: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}

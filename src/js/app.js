@@ -1,4 +1,4 @@
-import Field from './field';
+import Field from './gamefield-widget/field';
 import Menu from './menu-widget/menu-widget';
 
 const container = document.querySelector('.field-container');

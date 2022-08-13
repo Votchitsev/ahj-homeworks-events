@@ -22,6 +22,9 @@ export default class Menu {
         } else {
           this.mishitCount += 1;
           this.drawMishitCount();
+          if (this.mishitCount === 5) {
+            this.gameField.run = false;
+          }
         }
       });
     }
