@@ -1,3 +1,4 @@
+import Counter from './counter';
 import Field from './gamefield-widget/field';
 import Menu from './menu-widget/menu-widget';
 
@@ -8,5 +9,5 @@ field.drawField();
 
 const menu = new Menu(field);
 menu.addListeners();
-menu.drawScore();
-menu.drawMishitCount();
+
+Counter.redraw();

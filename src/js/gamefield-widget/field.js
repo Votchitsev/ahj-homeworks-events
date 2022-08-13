@@ -1,9 +1,10 @@
+import Counter from '../counter';
 import gameOverScreenListener from './gameOverScreenListener';
 
 export default class Field {
   constructor(container) {
     this.container = container;
-    this.run = true;
+    this.hit = false;
   }
 
   drawField() {
@@ -15,22 +16,32 @@ export default class Field {
 
   moveGoblin() {
     let index = 0;
+    let intervalCounter = 0;
 
     const interval = setInterval(() => {
-      if (this.run) {
-        const activeCell = this.container.querySelector('.active');
+      const activeCell = this.container.querySelector('.active');
 
-        if (activeCell) {
-          activeCell.classList.remove('active');
-        }
-        index = this.getRandomCell(index);
-        const cell = this.container.childNodes[index];
-        cell.classList.add('active');
-      } else {
+      if (activeCell) {
+        activeCell.classList.remove('active');
+      }
+      index = this.getRandomCell(index);
+      const cell = this.container.childNodes[index];
+      cell.classList.add('active');
+
+      if (!this.hit && intervalCounter > 0) {
+        Counter.goblinAppear();
+      }
+
+      Counter.redraw();
+
+      if (Counter.goblinAppearCount === 5) {
         clearInterval(interval);
         document.querySelector('.gameOverScreen').classList.remove('hide');
         gameOverScreenListener();
       }
+
+      this.hit = false;
+      intervalCounter += 1;
     }, 1000);
   }
 

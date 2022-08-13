@@ -1,9 +1,9 @@
+import Counter from '../counter';
+
 export default class Menu {
   constructor(gameField) {
     this.element = document.querySelector('#menu-button');
     this.gameField = gameField;
-    this.score = 0;
-    this.mishitCount = 0;
   }
 
   addListeners() {
@@ -12,31 +12,16 @@ export default class Menu {
 
     startButton.addEventListener('click', () => {
       this.gameField.moveGoblin();
+      this.goblinAppearCount = 0;
     });
 
     for (let i = 0; i < cells.length; i += 1) {
       cells.item(i).addEventListener('click', (event) => {
         if (event.target.classList.contains('active')) {
-          this.score += 1;
-          this.drawScore();
-        } else {
-          this.mishitCount += 1;
-          this.drawMishitCount();
-          if (this.mishitCount === 5) {
-            this.gameField.run = false;
-          }
+          Counter.addScore();
+          this.gameField.hit = true;
         }
       });
     }
-  }
-
-  drawScore() {
-    const scoreElement = document.querySelector('.score');
-    scoreElement.textContent = this.score;
-  }
-
-  drawMishitCount() {
-    const mishitElement = document.querySelector('.mishit');
-    mishitElement.textContent = this.mishitCount;
   }
 }
