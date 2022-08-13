@@ -1,14 +1,7 @@
-#game {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  margin-top: calc(50vh - 250px);
-  width: 416px;
-}
-
 .field-container {
   display: flex;
   flex-wrap: wrap;
+  cursor: url('../png/hammer.png'), auto;
 }
 
 .cell {
@@ -23,4 +16,12 @@
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: calc(50vh - 250px);
+  width: 416px;
 }
