@@ -21,8 +21,16 @@
   background-color: rgb(2, 206, 2);
 }
 
-#score {
+.count {
   font-size: 45px;
   width: 105px;
+  text-align: center;
+}
+
+.score {
   color: blue;
+}
+
+.mishit {
+  color: red;
 }

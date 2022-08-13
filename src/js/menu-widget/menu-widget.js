@@ -3,6 +3,7 @@ export default class Menu {
     this.element = document.querySelector('#menu-button');
     this.gameField = gameField;
     this.score = 0;
+    this.mishitCount = 0;
   }
 
   addListeners() {
@@ -18,13 +19,21 @@ export default class Menu {
         if (event.target.classList.contains('active')) {
           this.score += 1;
           this.drawScore();
+        } else {
+          this.mishitCount += 1;
+          this.drawMishitCount();
         }
       });
     }
   }
 
   drawScore() {
-    const scoreElement = document.querySelector('#score');
+    const scoreElement = document.querySelector('.score');
     scoreElement.textContent = this.score;
+  }
+
+  drawMishitCount() {
+    const mishitElement = document.querySelector('.mishit');
+    mishitElement.textContent = this.mishitCount;
   }
 }
