@@ -20,3 +20,9 @@
 #menu-button:hover {
   background-color: rgb(2, 206, 2);
 }
+
+#score {
+  font-size: 45px;
+  width: 105px;
+  color: blue;
+}

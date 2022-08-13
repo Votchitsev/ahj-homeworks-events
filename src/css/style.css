@@ -18,6 +18,11 @@
   background-position: center;
 }
 
+.menu {
+  display: flex;
+  justify-content: space-around;
+}
+
 #game {
   display: flex;
   flex-direction: column;

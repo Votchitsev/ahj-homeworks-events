@@ -8,3 +8,4 @@ field.drawField();
 
 const menu = new Menu(field);
 menu.addListeners();
+menu.drawScore();
